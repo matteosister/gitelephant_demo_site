@@ -1,16 +1,16 @@
 {
-  "author": "Josh David Miller",
-  "name": "ngbp",
-  "version": "0.3.2",
-  "homepage": "https://github.com/ngbp/ngbp",
+  "author": "Matteo Giachino",
+  "name": "gitelephant_demo_site",
+  "version": "0.0.1",
+  "homepage": "https://github.com/matteosister/gitelephant_demo_site",
   "licenses": {
     "type": "MIT",
-    "url": "https://raw.github.com/ngbp/ngbp/master/LICENSE"
+    "url": "https://raw.github.com/matteosister/gitelephant_demo_site/master/LICENSE"
   },
-  "bugs": "https://github.com/ngbp/ngbp/issues",
+  "bugs": "https://github.com/matteosister/gitelephant_demo_site/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ngbp/ngbp.git"
+    "url": "git@github.com:matteosister/gitelephant_demo_site.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -32,6 +32,7 @@
     "karma-jasmine": "^0.1.5",
     "grunt-karma": "^0.8.2",
     "karma-coffee-preprocessor": "^0.2.1",
-    "karma": "^0.12.9"
+    "karma": "^0.12.9",
+    "karma-phantomjs-launcher": "~0.1"
   }
 }
