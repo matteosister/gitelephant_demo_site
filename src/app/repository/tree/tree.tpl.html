@@ -1,5 +1,14 @@
+<!--<tr>
+    <td>{{repo.parent}}</td>
+    <td>{{repo.isRoot}}</td>
+</tr>-->
+<tr ng-if="!repo.isRoot">
+    <td><a ui-sref="repository.tree({ slug: slug, ref: 'master', path: repo.parent })">back</a></td>
+</tr>
 <tr ng-repeat="children in repo.tree">
     <td>
-        <a ui-sref="repository.tree({ slug: slug, ref: 'master', path: children.name })">{{ children.name }}</a>
+        <a ui-sref="repository.tree({ slug: slug, ref: 'master', path: children.full_path })">
+            {{ children.name }}
+        </a>
     </td>
 </tr>

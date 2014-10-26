@@ -10,23 +10,34 @@ angular.module('geds.repository', ['ui.router'])
         data:
             pageTitle: 'Repository'
 
-.controller 'RepositoryCtrl', ($scope, $stateParams, $state) ->
-    $state.transitionTo 'repository.root', { slug: $stateParams.slug, ref: 'master' }
+.controller 'RepositoryCtrl', ($scope, $stateParams, $state, Repo) ->
+    unless $stateParams.path?
+        $state.transitionTo 'repository.tree', { slug: 'git-rest', ref: 'master' }
+    ###$scope.slug = $stateParams.slug
+    $scope.repo = Repo
+    $scope.repo.setPath('')
+    $scope.repo.fetchTree()###
 
 .service 'Repo', class Repo
     constructor: (Restangular) ->
+        console.log 'constructor'
         @restangular = Restangular
-        @restangular.addResponseInterceptor (data, operation, what, url, response, deferred) ->
+        @restangular.addResponseInterceptor (data, operation, what, url, response, deferred) =>
             if operation is 'getList'
+                @isRoot = data.is_root
+                @parent = data.parent
                 return data.children
             data
 
     setPath: (path) ->
+        #console.log "setPath #{path}"
         @path = path
-        @fetchTree()
+
+    getParams: ->
+        params = {}
+        if @path != ''
+            params.path = @path
+        params
 
     fetchTree: ->
-        if @path == ''
-            @tree = @restangular.all('tree').all('master').getList().$object
-        else
-            @tree = @restangular.all('tree').all('master').all(@path).getList().$object
+        @tree = @restangular.all('tree').getList(@getParams()).$object

@@ -1,6 +1,6 @@
 <table class="table">
     <thead>
-        <th>header {{ slug }}</th>
+        <th>header {{ slug }} {{ repo.isRoot }} {{ repo.parent }}</th>
     </thead>
     <tbody ui-view="main"></tbody>
 </table>
