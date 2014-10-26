@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-ng-annotate');
 
     /**
      * Load in our build configuration file.
@@ -206,23 +207,6 @@ module.exports = function (grunt) {
         },
 
         /**
-         * `ngAnnotate` annotates the sources before minifying. That is, it allows us
-         * to code without the array syntax.
-         */
-        ngAnnotate: {
-            compile: {
-                files: [
-                    {
-                        src: ['<%= app_files.js %>'],
-                        cwd: '<%= build_dir %>',
-                        dest: '<%= build_dir %>',
-                        expand: true
-                    }
-                ]
-            }
-        },
-
-        /**
          * Minify the sources!
          */
         uglify: {
@@ -407,6 +391,26 @@ module.exports = function (grunt) {
                     '<%= html2js.app.dest %>',
                     '<%= html2js.common.dest %>',
                     '<%= test_files.js %>'
+                ]
+            }
+        },
+
+        /**
+         * `ngAnnotate` annotates the sources before minifying. That is, it allows us
+         * to code without the array syntax.
+         */
+        ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
+            compile: {
+                files: [
+                    {
+                        src: [ '<%= app_files.js %>' ],
+                        cwd: '<%= build_dir %>',
+                        dest: '<%= build_dir %>',
+                        expand: true
+                    }
                 ]
             }
         },

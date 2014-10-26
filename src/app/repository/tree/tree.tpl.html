@@ -1,0 +1,5 @@
+<tr ng-repeat="children in repo.tree">
+    <td>
+        <a ui-sref="repository.tree({ slug: slug, ref: 'master', path: children.name })">{{ children.name }}</a>
+    </td>
+</tr>
