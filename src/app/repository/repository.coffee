@@ -11,26 +11,22 @@ angular.module('geds.repository', ['ui.router'])
             pageTitle: 'Repository'
 
 .controller 'RepositoryCtrl', ($scope, $stateParams, $state, Repo) ->
+    $scope.slug = $stateParams.slug
     unless $stateParams.path?
-        $state.transitionTo 'repository.tree', { slug: 'git-rest', ref: 'master' }
-    ###$scope.slug = $stateParams.slug
-    $scope.repo = Repo
-    $scope.repo.setPath('')
-    $scope.repo.fetchTree()###
+        $state.go 'repository.tree', { slug: 'git-rest', ref: 'master' }
 
 .service 'Repo', class Repo
     constructor: (Restangular) ->
-        console.log 'constructor'
         @restangular = Restangular
         @restangular.addResponseInterceptor (data, operation, what, url, response, deferred) =>
             if operation is 'getList'
                 @isRoot = data.is_root
                 @parent = data.parent
+                @subject = data.subject
                 return data.children
             data
 
     setPath: (path) ->
-        #console.log "setPath #{path}"
         @path = path
 
     getParams: ->
@@ -40,4 +36,5 @@ angular.module('geds.repository', ['ui.router'])
         params
 
     fetchTree: ->
+        console.log 'fetchTree'
         @tree = @restangular.all('tree').getList(@getParams()).$object

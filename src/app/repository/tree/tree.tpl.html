@@ -1,12 +1,28 @@
-<!--<tr>
-    <td>{{repo.parent}}</td>
-    <td>{{repo.isRoot}}</td>
-</tr>-->
-<tr ng-if="!repo.isRoot">
-    <td><a ui-sref="repository.tree({ slug: slug, ref: 'master', path: repo.parent })">back</a></td>
+<tr>
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <breadcrumb data-repo="repo" data-slug="slug"></breadcrumb>
+    </td>
 </tr>
 <tr ng-repeat="children in repo.tree">
     <td>
+        <span class="fa {{ children.type | icon }}"></span>
         <a ui-sref="repository.tree({ slug: slug, ref: 'master', path: children.full_path })">
             {{ children.name }}
         </a>
