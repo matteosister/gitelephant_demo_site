@@ -1,0 +1,15 @@
+<tr>
+    <td>
+        <dropdown-branches></dropdown-branches>
+    </td>
+</tr>
+<tr>
+    <td>
+        <breadcrumb data-repo="repo" data-slug="slug"></breadcrumb>
+    </td>
+</tr>
+<tr>
+    <td>
+        <pre><div ng-repeat="line in repo.blob">{{ line.n + " " + line.c }}</div></pre>
+    </td>
+</tr>

@@ -3,9 +3,12 @@ angular.module("geds", [
     "templates-common"
     "ui.router"
     "restangular"
+    "geds.repo"
     "geds.home"
     "geds.repository"
-    "geds.repository.tree"
+    "geds.repository.tree",
+    "geds.repository.blob",
+    "geds.branch_selector"
 ])
 
 .config ($urlRouterProvider, $locationProvider, RestangularProvider) ->
@@ -13,7 +16,7 @@ angular.module("geds", [
     $locationProvider.html5Mode false
     RestangularProvider.setBaseUrl 'http://127.0.0.1:1337'
 
-#.run(->)
+.run(->)
 
 .controller "AppCtrl", ($scope) ->
     $scope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->

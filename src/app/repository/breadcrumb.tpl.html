@@ -1,10 +1,10 @@
 <ol class="breadcrumb">
     <li>
         <span ng-if="repo.isRoot">Home</span>
-        <a ng-if="!repo.isRoot" ui-sref="repository.tree({ slug: slug, ref: 'master', path: '' })">Home</a>
+        <a ng-if="!repo.isRoot" ui-sref="repository.tree({ slug: repo.slug, ref: repo.ref, path: '' })">Home</a>
     </li>
     <li ng-repeat="(path, label) in repo | split_path" ng-class="{ active: $last }">
-        <a ng-if="!$last" ui-sref="repository.tree({ slug: slug, ref: 'master', path: path })">{{ label }}</a>
+        <a ng-if="!$last" ui-sref="repository.tree({ slug: repo.slug, ref: repo.ref, path: path })">{{ label }}</a>
         <span ng-if="$last">{{ label }}</span>
     </li>
 </ol>

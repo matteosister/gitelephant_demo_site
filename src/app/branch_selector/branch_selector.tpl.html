@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        Dropdown {{ slug }}
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation" ng-repeat="branch in repo.branches">
+            <a role="menuitem" ui-sref="repository.tree({ slug: repo.slug, ref: branch.name })">{{ branch.name }}</a>
+        </li>
+    </ul>
+</div>

@@ -13,6 +13,7 @@ angular.module('geds.repository.tree', ['ui.router'])
 .controller 'TreeCtrl', ($scope, $stateParams, Repo) ->
     $scope.slug = $stateParams.slug
     $scope.repo = Repo
+    $scope.repo.setRef($stateParams.ref)
     $scope.repo.setPath($stateParams.path)
     $scope.repo.fetchTree()
 
