@@ -70,7 +70,8 @@ module.exports = {
             'vendor/angular-ui-router/release/angular-ui-router.js',
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/lodash/dist/lodash.min.js',
-            'vendor/restangular/dist/restangular.min.js'
+            'vendor/restangular/dist/restangular.min.js',
+            'vendor/google-code-prettify/src/run_prettify.js'
         ],
         css: [],
         assets: []

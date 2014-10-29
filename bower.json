@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "restangular": "~1.4.0",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "prettify": "*",
+    "google-code-prettify": "~1.0.3"
   }
 }
