@@ -71,9 +71,11 @@ module.exports = {
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/lodash/dist/lodash.min.js',
             'vendor/restangular/dist/restangular.min.js',
-            'vendor/google-code-prettify/src/run_prettify.js'
+            'vendor/google-code-prettify/bin/prettify.min.js'
         ],
-        css: [],
+        css: [
+            'vendor/google-code-prettify/bin/prettify.min.css'
+        ],
         assets: []
     }
 };

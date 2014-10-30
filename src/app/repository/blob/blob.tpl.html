@@ -10,6 +10,6 @@
 </tr>
 <tr>
     <td>
-        <pre class="prettyprint linenums">{{ repo.blobRaw }}</pre>
+        <pre class="prettyprint linenums" ng-bind-html="repo.blobRaw | prettyprint"></pre>
     </td>
 </tr>

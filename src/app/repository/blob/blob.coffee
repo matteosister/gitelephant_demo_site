@@ -17,3 +17,7 @@ angular.module('geds.repository.blob', ['ui.router'])
     $scope.repo.setPath($stateParams.path)
     $scope.repo.fetchTree()
     $scope.repo.fetchBlob()
+
+.filter 'prettyprint', ($sce) ->
+    (content) ->
+        return $sce.trustAsHtml(prettyPrintOne(content))
