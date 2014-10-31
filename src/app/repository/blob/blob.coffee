@@ -20,4 +20,21 @@ angular.module('geds.repository.blob', ['ui.router'])
 
 .filter 'prettyprint', ($sce) ->
     (content) ->
-        return $sce.trustAsHtml(prettyPrintOne(content))
+        console.log content
+        prettyPrint()
+        return content
+
+
+.directive 'prettyprint', ($sce) ->
+    replaceText = (str) ->
+        str1 = String(str)
+        return str1.replace /\n/g, "<br/>"
+
+    link = (scope, element) ->
+        element.html('sssss')
+
+    restrict: 'C'
+    link: link
+    scope: {
+        content: '='
+    }

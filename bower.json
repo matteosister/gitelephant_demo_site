@@ -12,6 +12,7 @@
     "restangular": "~1.4.0",
     "jquery": "~2.1.1",
     "prettify": "*",
-    "google-code-prettify": "~1.0.3"
+    "google-code-prettify": "~1.0.3",
+    "angular-highlightjs": "~0.3.1"
   }
 }

@@ -1,7 +1,8 @@
 angular.module('geds.repo', [])
 .service 'Repo', class Repo
-    constructor: (Restangular, $http) ->
+    constructor: (Restangular, $sce) ->
         @restangular = Restangular
+        @sce = $sce
         @restangular.addResponseInterceptor (data, operation, what, url, response, deferred) =>
             if operation is 'getList' and what is 'tree'
                 @isRoot = data.is_root
@@ -41,4 +42,4 @@ angular.module('geds.repo', [])
             @blobRawGenerate()
 
     blobRawGenerate: ->
-        @blobRaw = (_.pluck @blob, 'c').join '\n'
+        @blobRaw = @sce.trustAsHtml((_.pluck @blob, 'c').join '\n')

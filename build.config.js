@@ -63,7 +63,7 @@ module.exports = {
     vendor_files: {
         js: [
             'vendor/angular/angular.js',
-            'vendor/jquery/dist/jquery.js',
+            'vendor/jquery/dist/jquery.min.js',
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'vendor/bootstrap/js/dropdown.js',
             'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
@@ -71,7 +71,8 @@ module.exports = {
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/lodash/dist/lodash.min.js',
             'vendor/restangular/dist/restangular.min.js',
-            'vendor/google-code-prettify/bin/prettify.min.js'
+            'vendor/google-code-prettify/bin/prettify.min.js',
+            'vendor/angular-highlightjs/angular-highlightjs.min.js'
         ],
         css: [
             'vendor/google-code-prettify/bin/prettify.min.css'

@@ -3,6 +3,7 @@ angular.module("geds", [
     "templates-common"
     "ui.router"
     "restangular"
+    "hljs"
     "geds.repo"
     "geds.home"
     "geds.repository"
