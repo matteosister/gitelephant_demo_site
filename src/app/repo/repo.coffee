@@ -31,7 +31,8 @@ angular.module('geds.repo', [])
         console.log branch
 
     fetchTree: ->
-        @tree = @restangular.all('tree').getList(@getTreeParams()).$object
+        @restangular.all('tree').getList(@getTreeParams()).then (tree) =>
+            @tree = tree
         @blobRaw = ''
 
     fetchBranches: ->
@@ -39,7 +40,7 @@ angular.module('geds.repo', [])
 
     fetchBlob: ->
         url = @restangular.all('blob').getRestangularUrl()
-        @http.get(url, params: @getTreeParams()).success (blob) =>
+        @http.get(url, { params: @getTreeParams(), transformResponse: (d, h) -> return d}).success (blob) =>
             @blobRaw = hljs.highlightAuto(blob)
 
     blobRawGenerate: ->

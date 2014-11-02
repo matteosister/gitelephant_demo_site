@@ -5,9 +5,11 @@
 </tr>
 <tr>
     <td>
+        <div loader ng-if="repo.loading"></div>
         <breadcrumb data-repo="repo" data-slug="slug"></breadcrumb>
     </td>
 </tr>
 <tr>
-    <td hljs data-repo="repo"></td>
+    <td>
+        <pre ng-if="!repo.loading" class="hljs" ng-bind-html="repo.blobRaw.value"></pre></td>
 </tr>

@@ -62,8 +62,8 @@ module.exports = {
      */
     vendor_files: {
         js: [
-            'vendor/angular/angular.js',
             'vendor/jquery/dist/jquery.min.js',
+            'vendor/angular/angular.js',
             'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
             'vendor/bootstrap/js/dropdown.js',
             'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
@@ -71,11 +71,18 @@ module.exports = {
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/lodash/dist/lodash.min.js',
             'vendor/restangular/dist/restangular.min.js',
-            'vendor/highlightjs/highlight.pack.js'
+            'vendor/highlightjs/highlight.pack.js',
+            'vendor/spinjs/spin.js',
+            'vendor/spinjs/jquery.spin.js'
         ],
         css: [
-            //'vendor/highlightjs/styles/default.css',
-            'vendor/highlightjs/styles/dark.css'
+            //'vendor/highlightjs/styles/dark.css',
+            //'vendor/highlightjs/styles/foundation.css'
+            //'vendor/highlightjs/styles/idea.css'
+            //'vendor/highlightjs/styles/monokai_sublime.css'
+            //'vendor/highlightjs/styles/pojoaque.css'
+            //'vendor/highlightjs/styles/tomorrow.css',
+            'vendor/highlightjs/styles/tomorrow-night-eighties.css'
         ],
         assets: []
     }

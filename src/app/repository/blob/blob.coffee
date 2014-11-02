@@ -17,14 +17,3 @@ angular.module('geds.repository.blob', ['ui.router'])
     $scope.repo.setPath($stateParams.path)
     $scope.repo.fetchTree()
     $scope.repo.fetchBlob()
-
-.directive 'hljs', ($sce) ->
-    link = (scope, element) ->
-        console.log 'ci sono'
-        console.log element.html()
-
-    restrict: 'A'
-    scope: {
-        repo: '='
-    }
-    template: '<pre class="hljs" ng-bind-html="repo.blobRaw.value"></pre>'
