@@ -18,23 +18,13 @@ angular.module('geds.repository.blob', ['ui.router'])
     $scope.repo.fetchTree()
     $scope.repo.fetchBlob()
 
-.filter 'prettyprint', ($sce) ->
-    (content) ->
-        console.log content
-        prettyPrint()
-        return content
-
-
-.directive 'prettyprint', ($sce) ->
-    replaceText = (str) ->
-        str1 = String(str)
-        return str1.replace /\n/g, "<br/>"
-
+.directive 'hljs', ($sce) ->
     link = (scope, element) ->
-        element.html('sssss')
+        console.log 'ci sono'
+        console.log element.html()
 
-    restrict: 'C'
-    link: link
+    restrict: 'A'
     scope: {
-        content: '='
+        repo: '='
     }
+    template: '<pre class="hljs" ng-bind-html="repo.blobRaw.value"></pre>'

@@ -3,7 +3,6 @@ angular.module("geds", [
     "templates-common"
     "ui.router"
     "restangular"
-    "hljs"
     "geds.repo"
     "geds.home"
     "geds.repository"
@@ -12,10 +11,11 @@ angular.module("geds", [
     "geds.branch_selector"
 ])
 
-.config ($urlRouterProvider, $locationProvider, RestangularProvider) ->
+.config ($urlRouterProvider, $locationProvider, RestangularProvider, $sceProvider) ->
     $urlRouterProvider.otherwise "/"
     $locationProvider.html5Mode false
     RestangularProvider.setBaseUrl 'http://127.0.0.1:1337'
+    $sceProvider.enabled false
 
 .run(->)
 

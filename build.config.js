@@ -71,11 +71,11 @@ module.exports = {
             'vendor/angular-ui-utils/modules/route/route.js',
             'vendor/lodash/dist/lodash.min.js',
             'vendor/restangular/dist/restangular.min.js',
-            'vendor/google-code-prettify/bin/prettify.min.js',
-            'vendor/angular-highlightjs/angular-highlightjs.min.js'
+            'vendor/highlightjs/highlight.pack.js'
         ],
         css: [
-            'vendor/google-code-prettify/bin/prettify.min.css'
+            //'vendor/highlightjs/styles/default.css',
+            'vendor/highlightjs/styles/dark.css'
         ],
         assets: []
     }

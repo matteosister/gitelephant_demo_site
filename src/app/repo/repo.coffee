@@ -1,8 +1,9 @@
 angular.module('geds.repo', [])
 .service 'Repo', class Repo
-    constructor: (Restangular, $sce) ->
+    constructor: (Restangular, $sce, $http) ->
         @restangular = Restangular
         @sce = $sce
+        @http = $http
         @restangular.addResponseInterceptor (data, operation, what, url, response, deferred) =>
             if operation is 'getList' and what is 'tree'
                 @isRoot = data.is_root
@@ -37,9 +38,9 @@ angular.module('geds.repo', [])
         @branches = @restangular.all('branches').getList().$object
 
     fetchBlob: ->
-        @restangular.all('blob').getList(@getTreeParams()).then (blob) =>
-            @blob = blob
-            @blobRawGenerate()
+        url = @restangular.all('blob').getRestangularUrl()
+        @http.get(url, params: @getTreeParams()).success (blob) =>
+            @blobRaw = hljs.highlightAuto(blob)
 
     blobRawGenerate: ->
         @blobRaw = @sce.trustAsHtml((_.pluck @blob, 'c').join '\n')
