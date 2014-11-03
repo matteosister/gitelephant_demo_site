@@ -3,8 +3,6 @@ angular.module('geds.branch_selector', [])
     controller: ($scope, Repo) ->
         $scope.repo = Repo
         Repo.fetchBranches()
+
     restrict: 'E'
     templateUrl: 'branch_selector/branch_selector.tpl.html'
-    scope: {
-        slug: '='
-    }

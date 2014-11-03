@@ -1,10 +1,10 @@
 <tr>
-    <td>
+    <td colspan="2">
         <dropdown-branches></dropdown-branches>
     </td>
 </tr>
 <tr>
-    <td>
+    <td colspan="2">
         <div loader ng-if="repo.loading"></div>
         <breadcrumb data-repo="repo" data-slug="slug"></breadcrumb>
     </td>
@@ -18,5 +18,9 @@
         <a ng-if="children.type === 'blob'" ui-sref="repository.blob({ slug: repo.slug, ref: repo.ref, path: children.full_path })">
             {{ children.name }}
         </a>
+    </td>
+    <td>
+        <img ng-src="{{ children.last_commit.author.email | gravatar }}" title="{{ children.last_commit.author.name }}" />
+        {{ children.last_commit.message }}
     </td>
 </tr>

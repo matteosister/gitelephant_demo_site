@@ -73,7 +73,8 @@ module.exports = {
             'vendor/restangular/dist/restangular.min.js',
             'vendor/highlightjs/highlight.pack.js',
             'vendor/spinjs/spin.js',
-            'vendor/spinjs/jquery.spin.js'
+            'vendor/spinjs/jquery.spin.js',
+            'vendor/angular-md5/angular-md5.js'
         ],
         css: [
             //'vendor/highlightjs/styles/dark.css',

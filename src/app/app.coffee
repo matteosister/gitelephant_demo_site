@@ -4,6 +4,8 @@ angular.module("geds", [
     "ui.router"
     "restangular"
     "common.loader"
+    "ngMd5"
+    "gravatar"
     "geds.repo"
     "geds.home"
     "geds.repository"

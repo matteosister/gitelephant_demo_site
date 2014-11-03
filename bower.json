@@ -15,6 +15,7 @@
     "google-code-prettify": "~1.0.3",
     "angular-highlightjs": "~0.3.1",
     "highlightjs": "~8.3.0",
-    "spinjs": "~2.0.1"
+    "spinjs": "~2.0.1",
+    "angular-md5": "~0.1.7"
   }
 }
