@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+        <th>{{ slug }}</th>
+    </thead>
+    <tr>
+        <td>
+            <dropdown-branches></dropdown-branches>
+        </td>
+        <td>
+            <h2 class="pull-right">{{ slug }}</h2>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div loader ng-if="repo.loading"></div>
+            <breadcrumb data-repo="repo" data-slug="slug"></breadcrumb>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div ng-repeat="diff_object in commit.commit.diff_objects" width="100%">
+                <h3>{{ diff_object.original_path }}</h3>
+                <pre><div ng-repeat="chunk in diff_object.chunks" class="chunk">
+                    <div ng-repeat="line in chunk.lines"><div class="ln ln-orig">{{ line.origin_number }}</div><div class="ln ln-dest">{{ line.dest_number }}</div><div class="ln-content">{{ line.content }}</div></div>
+                </div></pre>
+
+            </div>
+        </td>
+    </tr>
+</table>
+

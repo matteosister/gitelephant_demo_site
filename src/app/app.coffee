@@ -9,9 +9,10 @@ angular.module("geds", [
     "geds.repo"
     "geds.home"
     "geds.repository"
-    "geds.repository.tree",
-    "geds.repository.blob",
+    "geds.repository.tree"
+    "geds.repository.blob"
     "geds.branch_selector"
+    "geds.commit"
 ])
 
 .config ($urlRouterProvider, $locationProvider, RestangularProvider, $sceProvider) ->

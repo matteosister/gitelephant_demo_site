@@ -1,6 +1,9 @@
 <tr>
-    <td colspan="2">
+    <td>
         <dropdown-branches></dropdown-branches>
+    </td>
+    <td>
+        <h2 class="pull-right">{{ slug }}</h2>
     </td>
 </tr>
 <tr>
@@ -11,7 +14,7 @@
 </tr>
 <tr ng-repeat="children in repo.tree">
     <td>
-        <span class="fa {{ children.type | icon }}"></span>
+        <span class="fa fa-1x {{ children.type | icon }}"></span>
         <a ng-if="children.type === 'tree'" ui-sref="repository.tree({ slug: repo.slug, ref: repo.ref, path: children.full_path })">
             {{ children.name }}
         </a>
@@ -21,6 +24,6 @@
     </td>
     <td>
         <img ng-src="{{ children.last_commit.author.email | gravatar }}" title="{{ children.last_commit.author.name }}" />
-        {{ children.last_commit.message }}
+        <a ui-sref="commit({sha: children.last_commit.sha})">{{ children.last_commit.message }}</a>
     </td>
 </tr>

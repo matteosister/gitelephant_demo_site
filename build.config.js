@@ -76,15 +76,7 @@ module.exports = {
             'vendor/spinjs/jquery.spin.js',
             'vendor/angular-md5/angular-md5.js'
         ],
-        css: [
-            //'vendor/highlightjs/styles/dark.css',
-            //'vendor/highlightjs/styles/foundation.css'
-            //'vendor/highlightjs/styles/idea.css'
-            //'vendor/highlightjs/styles/monokai_sublime.css'
-            //'vendor/highlightjs/styles/pojoaque.css'
-            //'vendor/highlightjs/styles/tomorrow.css',
-            'vendor/highlightjs/styles/tomorrow-night-eighties.css'
-        ],
+        css: [],
         assets: []
     }
 };

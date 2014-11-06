@@ -4,6 +4,9 @@
  * the Grunt configuration that is automatically processed.
  */
 
+//@import '../../vendor/highlightjs/styles/railscasts.css';
+@import '../../vendor/highlightjs/styles/tomorrow-night.css';
+
 
 /**
  * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
@@ -14,12 +17,18 @@
 
 
 /**
+ * Bootswatch
+ */
+@import 'bootswatch/variables';
+@import 'bootswatch/bootswatch';
+
+
+/**
  * This is our main variables file. We must include it last so we can overwrite any variable
  * definitions in our imported stylesheets.
  */
 
 @import 'variables';
-
 
 /**
  * Typography
@@ -32,26 +41,23 @@
   src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
 }
 
-code, pre, .pre {
-  padding: 5px;
-  margin: 10px 0;
-  background-color: #EFEFEF;
-  border: 1px solid #DADADA;
-  border-radius: 3px;
+.fa {
+  color: @gray-light;
 }
 
-code {
-  padding: 0 3px;
+.fa-15x {
+  font-size: 1.5em;
 }
 
-pre {
-  margin: 10px 0;
-  padding: 5px;
+.ln-left {
+  clear: both;
 }
 
-/**
- * Now that all app-wide styles have been applied, we can load the styles for
- * all the submodules and components we are using. 
- *
- * TODO: In a later version of this boilerplate, I'd like to automate this.
- */
+.ln {
+  float: left;
+}
+
+.ln-content {
+  float: left;
+  width: 100%;
+}
