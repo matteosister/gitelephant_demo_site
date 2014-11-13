@@ -1,0 +1,3 @@
+---
+
+- apt: package=redis-server state=latest update_cache=yes

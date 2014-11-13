@@ -1,0 +1,12 @@
+---
+  - stat: path=/var/repos/{{ name }}
+    register: p
+
+#  - file: path=/var/repos/{{ name }} state=absent
+#    when: p.stat.isdir is defined and !p.stat.isdir
+
+  - git: repo={{ git_url }} dest=/var/repos/{{ name }} accept_hostkey=true
+    when: not p.stat.exists
+
+  - shell: /usr/local/bin/checkout_all_branches chdir=/var/repos/{{ name }}
+    when: not p.stat.exists

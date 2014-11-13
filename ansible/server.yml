@@ -1,0 +1,13 @@
+---
+- hosts: do-git-elephant-demo
+  remote_user: root
+
+  roles:
+    - { role: nginx, tags: ws }
+    - { role: repos, tags: repos }
+
+  tasks:
+    - file: path=/var/www/gitelephant_demo state=directory
+      tags: deploy
+    - synchronize: src=../bin/ dest=/var/www/gitelephant_demo
+      tags: deploy

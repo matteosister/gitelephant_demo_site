@@ -1,0 +1,6 @@
+---
+- hosts: do-git-elephant-demo
+  remote_user: root
+
+  tasks:
+    - synchronize: src=../bin/ dest=/var/www/gitelephant_demo

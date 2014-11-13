@@ -1,0 +1,6 @@
+---
+  - apt: package=git state=latest update_cache=no
+  - copy: src=checkout_all_branches dest=/usr/local/bin/checkout_all_branches mode=0755
+  - include: setup_repository.yml name=git-elephant git_url=https://github.com/matteosister/GitElephant.git
+  - include: setup_repository.yml name=symfony git_url=https://github.com/symfony/symfony.git
+  - include: setup_repository.yml name=finite git_url=https://github.com/yohang/Finite.git
