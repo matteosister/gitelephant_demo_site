@@ -5,7 +5,9 @@
  */
 
 //@import '../../vendor/highlightjs/styles/railscasts.css';
-@import '../../vendor/highlightjs/styles/tomorrow-night.css';
+//@import '../../vendor/highlightjs/styles/tomorrow-night.css';
+//@import '../../vendor/highlightjs/styles/github.css';
+@import 'pygments.css';
 
 
 /**
@@ -60,4 +62,19 @@
 .ln-content {
   float: left;
   width: 100%;
+}
+
+table.highlighttable {
+  width: 100%;
+}
+
+pre {
+  background-color: #FFF !important;
+  border-radius: 0;
+}
+
+.linenodiv {
+  pre {
+    border-right: 0;
+  }
 }

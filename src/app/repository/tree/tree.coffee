@@ -11,7 +11,6 @@ angular.module('geds.repository.tree', ['ui.router'])
             pageTitle: 'Tree'
 
 .controller 'TreeCtrl', ($scope, $stateParams, Repo) ->
-    console.log 'sssss'
     $scope.slug = $stateParams.slug
     $scope.repo = Repo
     $scope.repo.setRef($stateParams.ref)

@@ -13,7 +13,5 @@
     </td>
 </tr>
 <tr>
-    <td colspan="2">
-        <pre ng-if="!repo.loading" class="hljs" ng-bind-html="repo.blobRaw.value"></pre>
-    </td>
+    <td colspan="3" ng-if="!repo.loading" ng-bind-html="repo.blobRaw"></td>
 </tr>

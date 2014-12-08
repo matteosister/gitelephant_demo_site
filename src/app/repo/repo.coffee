@@ -40,8 +40,9 @@ angular.module('geds.repo', [])
 
     fetchBlob: ->
         url = @restangular.all('blob').getRestangularUrl()
-        @http.get(url, { params: @getTreeParams(), transformResponse: (d, h) -> return d}).success (blob) =>
-            @blobRaw = hljs.highlightAuto(blob)
+        params = _.merge @getTreeParams(), { pygmentize: 1 }
+        @http.get(url, { params: params, transformResponse: (d, h) -> return d}).success (blob) =>
+            @blobRaw = blob
 
     blobRawGenerate: ->
         @blobRaw = @sce.trustAsHtml((_.pluck @blob, 'c').join '\n')
