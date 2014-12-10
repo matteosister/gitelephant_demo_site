@@ -12,6 +12,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-commands');
     grunt.loadNpmTasks('grunt-conventional-changelog');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks('grunt-coffeelint');
@@ -81,6 +82,17 @@ module.exports = function (grunt) {
                 tagMessage: 'Version %VERSION%',
                 push: false,
                 pushTo: 'origin'
+            }
+        },
+
+        command: {
+            pygments: {
+                cmd: [
+                    'pygmentize -f html -S default > src/assets/pygments/default.css',
+                    'pygmentize -f html -S emacs > src/assets/pygments/emacs.css',
+                    'pygmentize -f html -S friendly > src/assets/pygments/friendly.css',
+                    'pygmentize -f html -S colorful > src/assets/pygments/colorful.css'
+                ]
             }
         },
 

@@ -13,5 +13,13 @@
     </td>
 </tr>
 <tr>
+    <td colspan="3">
+        <h4>
+            <img class="img-circle" ng-src="{{ repo.tree.subject.last_commit.author.email | gravatar:40 }}" />
+            <a>{{ repo.tree.subject.last_commit.message }}</a>
+        </h4>
+    </td>
+</tr>
+<tr>
     <td colspan="3" ng-if="!repo.loading" ng-bind-html="repo.blobRaw"></td>
 </tr>

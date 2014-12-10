@@ -4,10 +4,10 @@
  * the Grunt configuration that is automatically processed.
  */
 
-//@import '../../vendor/highlightjs/styles/railscasts.css';
-//@import '../../vendor/highlightjs/styles/tomorrow-night.css';
-//@import '../../vendor/highlightjs/styles/github.css';
-@import 'pygments.css';
+@import '../assets/pygments/default.css';
+//@import '../assets/pygments/emacs.css';
+//@import '../assets/pygments/friendly.css';
+//@import '../assets/pygments/colorful.css';
 
 
 /**
@@ -76,5 +76,14 @@ pre {
 .linenodiv {
   pre {
     border-right: 0;
+  }
+}
+
+.highlighttable {
+  td.linenos {
+    width: 0%;
+  }
+  td.code {
+    width: 100%;
   }
 }

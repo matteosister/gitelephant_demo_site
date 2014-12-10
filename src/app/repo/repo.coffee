@@ -31,9 +31,10 @@ angular.module('geds.repo', [])
         console.log branch
 
     fetchTree: ->
-        @restangular.all('tree').getList(@getTreeParams()).then (tree) =>
-            @tree = tree
         @blobRaw = ''
+        @restangular.all('tree').getList(@getTreeParams()).then (tree) =>
+            console.log tree
+            @tree = tree
 
     fetchBranches: ->
         @branches = @restangular.all('branches').getList().$object
